@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@font-face {
+   font-family: "SF Pro";
+   src: url("/SF-Pro-Text-Regular.otf") format("opentype");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "JetBrainsMono Regular";
+   src: url("/JetBrainsMono-Regular.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@layer utilities {
+   .sf-font {
+      font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+   }
+
+   .jb-font {
+      font-family: "JetBrainsMono Regular", "Courier New", monospace;
+   }
+}
+
+@layer base {
+   .form-input {
+      @apply py-1 px-1.5;
+      @apply w-56 h-9 xl:w-64 2xl:w-72;
+      @apply border rounded-sm text-lg;
+      @apply focus:outline-none transition-all;
+   }
+
+   .validate-input:invalid {
+      @apply border-red-600;
+   }
+
+   .validate-input:valid {
+      @apply border-green-600;
+   }
+}
